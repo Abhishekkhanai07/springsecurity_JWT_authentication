@@ -19,7 +19,7 @@ public class JWTUtil {
 	public String generateToken(String name) {
 		return Jwts.builder().setSubject(name)
 				.signWith(keys).setIssuedAt(new Date())
-				.setExpiration(new Date(System.currentTimeMillis()+2*60*1000))
+				.setExpiration(new Date(System.currentTimeMillis()+4*60*1000))
 				.compact();
 	}
 	

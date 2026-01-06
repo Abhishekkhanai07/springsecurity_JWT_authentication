@@ -51,13 +51,13 @@ public class UserController {
 		return service.createUser(user);
 	}
 	
-	@RequestMapping("/public/api/change-password")
+	@RequestMapping("api/change-password")
 	public String changePassword(@RequestBody ChangePassword password) {
 		
 		return service.changePassword(password);
 	}
 	
-	@RequestMapping("/api/delete-id/{email}")
+	@RequestMapping("api/delete-id/{email}")
 	public String deleteById(@PathVariable String email) {
 		
 	     return service.deleteByEmail(email);

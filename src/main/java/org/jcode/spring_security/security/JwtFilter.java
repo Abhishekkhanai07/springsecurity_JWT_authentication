@@ -50,7 +50,7 @@ public class JwtFilter extends OncePerRequestFilter{
             System.out.println("Once per Request Filter : Is Valid token "+isValidToken);
             
             if(isValidToken) {
-            	UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userdetials,null);
+            	UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userdetials,null,userdetials.getAuthorities());
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }else {
